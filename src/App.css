@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #252820;
+  background: #f7f5ef;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #f7f5ef;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #252820;
+}
+
+.navbar {
+  min-height: 72px;
+  padding: 0 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #dedbd2;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 27px;
+  font-weight: 700;
+  color: #252820;
+  text-decoration: none;
+}
+
+.logo span {
+  color: #bd6038;
+}
+
+.nav-label {
+  color: #55584f;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.container {
+  width: min(100% - 40px, 920px);
+  margin: 0 auto;
+  flex: 1;
+}
+
+.intro {
+  padding: 60px 0 35px;
+}
+
+.eyebrow {
+  color: #a94d29;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 17px;
+}
+
+.intro h1 {
+  color: #22251f;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(42px, 6vw, 62px);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -1px;
+  margin: 0;
+}
+
+.subtitle {
+  max-width: 440px;
+  color: #50534b;
+  font-size: 15px;
+  line-height: 1.8;
+  margin-top: 18px;
+}
+
+.note-form-section {
+  background: #fff;
+  border: 1px solid #d8d4ca;
+  border-radius: 10px;
+  padding: 26px;
+  box-shadow: 0 5px 18px rgba(35, 35, 25, 0.04);
+}
+
+.note-form-section h2,
+.section-heading h2 {
+  color: #252820;
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 20px;
+}
+
+.note-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.note-form input,
+.note-form textarea {
+  width: 100%;
+  padding: 14px;
+  color: #252820;
+  background: #fff;
+  border: 1px solid #c9c6bc;
+  border-radius: 6px;
+  outline: none;
+}
+
+.note-form input:focus,
+.note-form textarea:focus {
+  border-color: #bd6038;
+  box-shadow: 0 0 0 2px rgba(189, 96, 56, 0.12);
+}
+
+.note-form input::placeholder,
+.note-form textarea::placeholder {
+  color: #65675f;
+  opacity: 1;
+}
+
+.note-form textarea {
+  min-height: 110px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.save-btn {
+  background: #ad542f;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 20px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.save-btn:hover {
+  background: #8f4022;
+}
+
+.cancel-btn {
+  padding: 11px 17px;
+  color: #34372f;
+  background: #fff;
+  border: 1px solid #c9c6bc;
+  border-radius: 6px;
+}
+
+.notes-section {
+  padding: 45px 0 65px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.section-heading h2 {
+  margin: 0;
+}
+
+.note-count {
+  color: #34372f;
+  background: #e8e4d9;
+  border-radius: 20px;
+  padding: 7px 12px;
+  font-size: 12px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  background: #fff;
+  border: 1px dashed #c9c6bc;
+  border-radius: 9px;
+}
+
+.empty-icon {
+  color: #ad542f;
+  font-size: 34px;
+}
+
+.empty-state h3 {
+  color: #252820;
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  margin: 10px 0;
+}
+
+.empty-state p {
+  color: #50534b;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.note-card {
+  background: #fff;
+  border: 1px solid #dedbd2;
+  border-radius: 9px;
+  padding: 21px;
+  overflow-wrap: anywhere;
+}
+
+.note-card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.note-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #bd6038;
+}
+
+.note-date {
+  color: #5f6259;
+  font-size: 11px;
+}
+
+.note-card h3 {
+  color: #252820;
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  margin: 0 0 10px;
+}
+
+.note-content {
+  color: #50534b;
+  font-size: 13px;
+  line-height: 1.8;
+  white-space: pre-wrap;
+}
+
+.card-actions {
+  display: flex;
+  gap: 18px;
+  border-top: 1px solid #e9e6de;
+  padding-top: 14px;
+  margin-top: 18px;
+}
+
+.edit-btn,
+.delete-btn {
+  padding: 0;
+  background: none;
+  border: none;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.edit-btn {
+  color: #9b4828;
+}
+
+.delete-btn {
+  color: #50534b;
+}
+
+footer {
+  padding: 22px 8%;
+  border-top: 1px solid #dedbd2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+footer p {
+  color: #50534b;
+  font-size: 12px;
+}
+
+footer span {
+  color: #55584f;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    padding: 0 20px;
+  }
+
+  .nav-label {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .intro {
+    padding: 45px 0 28px;
+  }
+
+  .intro h1 {
+    font-size: 43px;
+  }
+
+  .note-form-section {
+    padding: 19px;
+  }
+
+  .notes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  footer {
+    padding: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
